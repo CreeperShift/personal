@@ -1,0 +1,1 @@
+Simple personal page meant to be hosted on github pages.
