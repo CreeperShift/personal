@@ -4,15 +4,25 @@
   --color-text-primary: rgb(223, 223, 223);
   --transition-prop: all 0.4s ease-in-out;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+  --link-border-col: rgb(176, 176, 199);
 }
 
 body {
   background: #211629;
   background: -webkit-gradient(linear, left top, right top, from(#211629), to(#1f0404));
   background: linear-gradient(90deg, #211629 0%, #1f0404 100%);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
-  color: var(--color-text-primary);
+  color: var(--link-border-col);
+}
+
+.t1 {
+  color: white;
+}
+
+.main-content {
+  display: -ms-grid;
+  display: grid;
 }
 
 .container {
@@ -20,25 +30,75 @@ body {
   display: grid;
 }
 
+/* About me*/
+.aboutme {
+  padding-bottom: 8vh;
+}
+
+.colContainer {
+  padding-top: 45px;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.colContainer h1 {
+  font-size: 4rem;
+}
+
+.colContainer .leftCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-end;
+  padding-left: 15px;
+  padding-right: 65px;
+}
+
+.colContainer .rightCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 40px;
+  justify-self: flex-start;
+  padding-left: 15px;
+}
+
+.colContainer .rightCol p {
+  margin-top: -25px;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.photo-me {
+  width: auto;
+  height: 320px;
+  border-radius: 50%;
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
+}
+
 .nav {
-  width: 30%;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
   text-decoration: none;
   color: inherit;
 }
 
 .link {
+  border: 3px solid var(--link-border-col);
   padding: 2rem;
   font-size: 8rem;
-  color: #c7b0b0;
-  border-style: solid;
+  color: var(--link-border-col);
 }
 
 .link a {
@@ -65,12 +125,10 @@ body {
   top: 100%;
   left: 50%;
   margin-left: -60px;
-  background-color: rgba(110, 110, 110, 0.425);
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 5px 0;
   margin-top: -50px;
-  border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
