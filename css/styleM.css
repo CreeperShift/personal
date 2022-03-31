@@ -9,12 +9,42 @@
 }
 
 body {
+  overflow: hidden;
   background: #211629;
   background: -webkit-gradient(linear, left top, right top, from(#211629), to(#1f0404));
   background: linear-gradient(90deg, #211629 0%, #1f0404 100%);
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   color: var(--link-border-col);
+}
+
+.switchLang {
+  font-size: 0.8rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  padding-right: 1vh;
+  cursor: pointer;
+}
+
+.switchLang .flagEN {
+  justify-self: flex-end;
+  padding-right: 10px;
+  border-right: 1px solid;
+}
+
+.switchLang .flagDE {
+  padding-left: 10px;
+}
+
+.switchLang .active {
+  text-decoration: underline;
+  cursor: default;
 }
 
 .t1 {
@@ -41,24 +71,23 @@ body {
   display: -ms-grid;
   display: grid;
   justify-items: center;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
 }
 
 .colContainer h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .colContainer .leftCol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-self: flex-end;
-  padding-left: 15px;
-  padding-right: 65px;
+  justify-self: center;
 }
 
 .colContainer .rightCol {
+  border-left: 1px solid var(--link-border-col);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,9 +95,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-right: 40px;
-  justify-self: flex-start;
-  padding-left: 15px;
+  margin-left: 6vw;
+  margin-top: 3vh;
+  padding-left: 3vw;
 }
 
 .colContainer .rightCol p {
@@ -79,7 +108,7 @@ body {
 
 .photo-me {
   width: auto;
-  height: 320px;
+  height: 220px;
   border-radius: 33%;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
@@ -91,14 +120,15 @@ body {
   display: flex;
   justify-self: center;
   text-align: center;
+  font-size: 1rem;
   padding-bottom: 15px;
 }
 
 .nav {
   -ms-grid-column-align: center;
       justify-self: center;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -107,7 +137,7 @@ body {
 .link {
   border: 3px solid var(--link-border-col);
   padding: 2rem;
-  font-size: 8rem;
+  font-size: 4rem;
   color: var(--link-border-col);
 }
 
@@ -129,10 +159,9 @@ body {
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-  visibility: hidden;
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: 120px;
-  top: 100%;
+  top: 105%;
   left: 50%;
   margin-left: -60px;
   color: white;
@@ -149,38 +178,41 @@ body {
   visibility: visible;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   body {
     font-size: 0.9rem;
   }
   .link {
-    font-size: 2.6rem;
+    font-size: 6rem;
   }
   .nav {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
   .leftCol {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: flex-end !important;
     padding-left: 0px;
-    padding-right: 0px;
+    padding-right: 2vw;
   }
   .rightCol {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-self: left;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: flex-start;
+            flex-direction: flex-start;
     padding-right: 0px;
-    justify-self: center;
     padding-left: 0px;
+    margin-left: 0px;
   }
   .rightCol p {
     margin-top: -25px;
@@ -188,19 +220,22 @@ body {
     font-style: italic;
   }
   .photo-me {
-    height: 28vh;
+    height: 35vh;
   }
   .colContainer {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr 1.28fr;
+        grid-template-columns: 1fr 1.28fr;
+  }
+  .colContainer h1 {
+    font-size: 4rem;
   }
   .tooltip .tooltiptext {
     visibility: hidden;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     width: 120px;
-    top: 100%;
+    top: 95%;
     left: 50%;
     margin-left: -60px;
     color: white;
@@ -212,4 +247,29 @@ body {
     z-index: 1;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+@media only screen and (max-height: 700px) and (min-width: 768px) {
+  .link {
+    font-size: 3rem;
+  }
+  .colContainer h1 {
+    font-size: 2.4rem;
+  }
+  .rightCol p {
+    margin-top: -25px;
+    font-size: 0.8rem !important;
+    font-style: italic;
+  }
+  .photo-me {
+    height: 55vh;
+  }
+  .tooltip .tooltiptext {
+    visibility: visible;
+    font-size: 0.8rem;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+}
+/*# sourceMappingURL=styleM.css.map */

@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Max Henkes - Personal Site</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/styleM.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body class="main-content">
-
-<div class="aboutme">
-    <div class="colContainer">
-
-    <div class="leftCol">
-        <img class="photo-me" src="img/aboutMe.jpg" width="320" height="320"/>
-    </div>
-    <div class="rightCol">
-        <h1>Hi,<br> I'm <span class="t1">Max Henkes</span>.
-        </h1>
-        <p>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="main-content">
+    <header class="switchLang">
+      <a class="flagEN active" id="switchEN">en</a>
+      <a class="flagDE" id="switchDE">de</a>
+    </header>
+    <div class="aboutme">
+      <div class="colContainer">
+        <div class="leftCol">
+          <img
+            class="photo-me animate__animated animate__fadeIn"
+            src="img/aboutMe.jpg"
+            width="320"
+            height="320"
+          />
+        </div>
+        <div class="rightCol">
+          <h1 class="animate__animated animate__backInRight">
+            <span id="name1" class="lang"> Hi, </span><br />
+            <span id="name2" class="lang"> I'm </span>
+            <span class="t1"><u>Max Henkes</u></span
+            >.
+          </h1>
+          <p class="animate__animated animate__fadeInUp lang" id="shortInfo">
             Fullstack Developer and 3D Printing Enthusiast
-        </p>
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-
-</div>
-
-
+    <div class="short-text animate__animated animate__fadeIn lang" id="links">
+      <p>
+        I'm a big fan of minimalistic websites, so feel free to explore the
+        links below.
+      </p>
+    </div>
     <div class="nav container">
-        <div class="link l1 tooltip"><a href="#"><i class="fa-solid fa-user"></i></a><span class="tooltiptext">About Me</span></div>
-        <div class="link l2 tooltip"><a href="#"><i class="fa-solid fa-utensils"></i></a><span class="tooltiptext">Cooking</span></div>
-        <div class="link l3 tooltip"><a href="#"><i class="fa-solid fa-camera-retro"></i><span class="tooltiptext">Photography</span></div></a>
-        <div class="link l4 tooltip"><a href="https://github.com/CreeperShift" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-square"></i><span class="tooltiptext">Github</span></div></a>
+      <div class="link l4 tooltip animate__animated animate__fadeIn">
+        <a
+          href="https://github.com/CreeperShift"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fa-brands fa-github-square"></i></a
+        ><span class="tooltiptext">Github</span>
+      </div>
+      <div class="link l1 tooltip animate__animated animate__fadeIn">
+        <a href="#"><i class="fa-solid fa-print"></i></a
+        ><span class="tooltiptext">3D Printing</span>
+      </div>
+
+      <div class="link l2 tooltip animate__animated animate__fadeIn">
+        <a href="#"><i class="fa-solid fa-utensils"></i></a
+        ><span class="tooltiptext">Cooking</span>
+      </div>
+      <div class="link l3 tooltip animate__animated animate__fadeIn">
+        <a href="#"><i class="fa-solid fa-camera-retro"></i></a
+        ><span class="tooltiptext">Photography</span>
+      </div>
     </div>
-</body>
+    <script src="js/lang.js"></script>
+  </body>
 </html>

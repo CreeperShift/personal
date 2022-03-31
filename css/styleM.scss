@@ -10,6 +10,7 @@
 }
 body {
   //background-color: var(--color-primary);
+  overflow: hidden;
   background: rgb(33, 22, 41);
   background: linear-gradient(
     90deg,
@@ -19,6 +20,30 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   color: var(--link-border-col);
+}
+
+.switchLang {
+  font-size: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+  justify-self: right;
+  padding-right: 1vh;
+  cursor: pointer;
+
+  .flagEN {
+    justify-self: flex-end;
+    padding-right: 10px;
+    border-right: 1px solid;
+  }
+  .flagDE {
+    padding-left: 10px;
+  }
+
+  .active {
+    text-decoration: underline;
+    cursor: default;
+  }
 }
 
 .t1 {
@@ -42,25 +67,24 @@ body {
   padding-top: 45px;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .leftCol {
     display: flex;
-    justify-self: flex-end;
-    padding-left: 15px;
-    padding-right: 65px;
+    justify-self: center;
   }
 
   .rightCol {
+    border-left: 1px solid var(--link-border-col);
     display: flex;
     flex-direction: column;
-    padding-right: 40px;
-    justify-self: flex-start;
-    padding-left: 15px;
+    margin-left: 6vw;
+    margin-top: 3vh;
+    padding-left: 3vw;
     p {
       margin-top: -25px;
       font-size: 1rem;
@@ -71,7 +95,7 @@ body {
 
 .photo-me {
   width: auto;
-  height: 320px;
+  height: 220px;
   border-radius: 33%;
   box-shadow: var(--box-shadow-1);
 }
@@ -80,12 +104,13 @@ body {
   display: flex;
   justify-self: center;
   text-align: center;
+  font-size: 1rem;
   padding-bottom: 15px;
 }
 
 .nav {
   justify-self: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -94,7 +119,7 @@ body {
 .link {
   border: 3px solid var(--link-border-col);
   padding: 2rem;
-  font-size: 8rem;
+  font-size: 4rem;
   color: var(--link-border-col);
 
   a {
@@ -114,10 +139,10 @@ body {
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-  visibility: hidden;
-  font-size: 1rem;
+  //visibility: hidden;
+  font-size: 0.9rem;
   width: 120px;
-  top: 100%;
+  top: 105%;
   left: 50%;
   margin-left: -60px;
 
@@ -137,31 +162,33 @@ body {
   visibility: visible;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   body {
     font-size: 0.9rem;
   }
 
   .link {
-    font-size: 2.6rem;
+    font-size: 6rem;
   }
   .nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
   .leftCol {
     display: flex;
-    justify-self: center;
+    align-self: center;
+    justify-self: flex-end !important;
     padding-left: 0px;
-    padding-right: 0px;
+    padding-right: 2vw;
   }
 
   .rightCol {
     display: flex;
-    flex-direction: column;
+    justify-self: left;
+    flex-direction: flex-start;
     padding-right: 0px;
-    justify-self: center;
     padding-left: 0px;
+    margin-left: 0px;
     p {
       margin-top: -25px;
       font-size: 1rem;
@@ -170,19 +197,23 @@ body {
   }
 
   .photo-me {
-    height: 28vh;
+    height: 35vh;
   }
 
   .colContainer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1.28fr;
+
+    h1 {
+      font-size: 4rem;
+    }
   }
 
   .tooltip .tooltiptext {
     visibility: hidden;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     width: 120px;
-    top: 100%;
+    top: 95%;
     left: 50%;
     margin-left: -60px;
 
@@ -195,5 +226,38 @@ body {
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-width: 768px) {
+  .link {
+    font-size: 3rem;
+  }
+
+  .colContainer {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+
+  .rightCol {
+    p {
+      margin-top: -25px;
+      font-size: 0.8rem !important;
+      font-style: italic;
+    }
+  }
+
+  .photo-me {
+    height: 55vh;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: visible;
+    font-size: 0.8rem;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
   }
 }
